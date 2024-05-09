@@ -5,6 +5,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Tooltip } from "flowbite-react";
 import { LuUser2 } from "react-icons/lu";
 import { MdPersonAdd } from "react-icons/md";
+import itLogo from "../../../public/information-technology.png";
 
 
 
@@ -46,9 +47,16 @@ const Navbar = () => {
     const links = <>
 
         <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/">Home</NavLink></li>
-        <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/addcraft">Add Craft Item</NavLink></li>
-        <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/allcraft">All Art & craft Items</NavLink></li>
-        <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/mycraftlist">My Art & Craft List</NavLink></li>
+        <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/addcraft">Queries</NavLink></li>
+
+        {
+            user && <>
+                <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/allcraft">Recommendations For Me</NavLink></li>
+                <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/mycraftlist">My Queries</NavLink></li>
+                <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/mycraftlist">My Recommendations</NavLink></li>
+            </>
+        }
+
         <li>
             <div>
                 <input onChange={handleToggle} type="checkbox" value="synthwave" className="toggle theme-controller dark:bg-blue-400 bg-amber-300 border-sky-400 [--tglbg:theme(colors.sky.500)] checked:bg-blue-300 checked:border-blue-800 checked:[--tglbg:theme(colors.blue.900)] row-start-1 col-start-1 col-span-2" />
@@ -60,7 +68,7 @@ const Navbar = () => {
     return (
         <div>
             <div className=" " >
-                <div className="navbar ">
+                <div className="navbar items-center ">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -70,7 +78,7 @@ const Navbar = () => {
                                 {links}
                             </ul>
                         </div>
-                        <Link to="/" className="btn btn-ghost font-bold hover:text-yellow-600 hover:bg-pink-950 text-green-700 text-2xl">ProperIT</Link>
+                        <Link to="/" className="btn btn-ghost font-bold hover:text-yellow-600 hover:bg-pink-950 text-green-700 text-2xl"><span><img className="h-12 w-12" src={itLogo} alt="" /></span>ProperIT</Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1 ">
@@ -81,21 +89,16 @@ const Navbar = () => {
                         {
                             user ?
                                 <Link to="/">
-                                    <div data-tooltip-id="my-tooltip-inline"
-                                        data-tooltip-content={user?.displayName || "not found"} data-tooltip-place="left-start" >
+                                    <div className="tooltip tooltip-left " data-tip={user?.displayName || "not found"}>
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
                                             <div className="w-10 rounded-full border border-black">
                                                 <img alt="null " src={user?.photoURL} />
                                             </div>
                                         </div>
-                                        <Tooltip
-                                            id="my-tooltip-inline"
-                                            style={{ backgroundColor: "rgb(30, 17, 214)", color: "#FFFF00" }}
-                                        />
+
                                     </div>
                                 </Link>
-                                :
-                                <Link to="/register"><button className="btn btn-active hover:btn-accent  btn-primary rounded-lg"><MdPersonAdd />Register</button></Link>
+                                : null
                         }
 
                         {
