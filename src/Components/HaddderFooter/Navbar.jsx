@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import useAuth from "../Hooks/useAuth";
 import { toast } from "react-toastify";
 import { Link, NavLink } from "react-router-dom";
-import { Tooltip } from "flowbite-react";
+
 import { LuUser2 } from "react-icons/lu";
-import { MdPersonAdd } from "react-icons/md";
+
 import itLogo from "../../../public/information-technology.png";
 
 

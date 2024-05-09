@@ -1,9 +1,15 @@
+import Slider from "./SliderBanner/Slider";
 
 
 const Home = () => {
     return (
         <div>
-            <p>This is Home</p>
+            
+            {/* Slider and banner section */}
+            <div>
+                <Slider></Slider>
+            </div>
+
         </div>
     );
 };

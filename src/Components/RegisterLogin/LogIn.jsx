@@ -1,17 +1,17 @@
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-// import useAuth from "../Hooks/useAuth";
-import { useContext, useEffect, useState } from "react";
+import useAuth from "../Hooks/useAuth";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { AuthContext } from "../Autentication/AuthProvider/AuthProvider";
+// import { AuthContext } from "../Autentication/AuthProvider/AuthProvider";
 
 
 const LogIn = () => {
 
-    // const { signInUser, user, logOut, updateTitle, googleLogIn } = useAuth();
-    const { signInUser, user, logOut, updateTitle, googleLogIn } = useContext(AuthContext);
+    const { signInUser, user, logOut, updateTitle, googleLogIn } = useAuth();
+    // const { signInUser, user, logOut, updateTitle, googleLogIn } = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
     const [passwordError, setPasswordError] = useState('');
