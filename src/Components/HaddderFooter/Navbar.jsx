@@ -52,7 +52,7 @@ const Navbar = () => {
         {
             user && <>
                 <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/allcraft">Recommendations For Me</NavLink></li>
-                <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/mycraftlist">My Queries</NavLink></li>
+                <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/myqueries">My Queries</NavLink></li>
                 <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/mycraftlist">My Recommendations</NavLink></li>
             </>
         }

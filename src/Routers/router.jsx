@@ -5,6 +5,9 @@ import Root from "./Root";
 import Home from "../Components/HomePage/Home";
 import Register from "../Components/RegisterLogin/Register";
 import LogIn from "../Components/RegisterLogin/LogIn";
+import MyQueries from "../Components/AllPage/MyQueries/MyQueries";
+import PrivetRout from "../Components/Autentication/PrivateRoute/PrivetRout";
+import AddMyQueries from "../Components/AllPage/MyQueries/AddMyQueries/AddMyQueries";
 
 const router = createBrowserRouter([
     {
@@ -23,6 +26,14 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <LogIn></LogIn>
+            },
+            {
+                path: "/myqueries",
+                element: <PrivetRout><MyQueries></MyQueries></PrivetRout>
+            },
+            {
+                path: "/addmyqueries",
+                element: <PrivetRout><AddMyQueries></AddMyQueries></PrivetRout>
             }
         ]
     },
