@@ -1,7 +1,7 @@
 import moment from "moment";
 import { useEffect } from "react";
 import useAuth from "../../../Hooks/useAuth";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -128,6 +128,11 @@ return (
 
                 </section>
             </div>
+            
+            <div className="p-8">
+                <Link to="/myqueries"><button className="btn btn-primary">Back to My Queries </button></Link>
+            </div>
+
         </div>
     </div>
 );

@@ -23,7 +23,7 @@ const Details = () => {
     const querys = allQueryDetails?.find((query) => query._id === id)
     console.log(querys);
 
-    // const {  } = querys;
+    const { productName, productBrand, productimageURL, querytitle, boycotdescription, datetime, recommendationCount, userimageURL, username } = querys;
 
 
 
@@ -33,24 +33,24 @@ const Details = () => {
 
                 {/* Querie IMG and Title */}
                 <div>
-                    <img src="https://source.unsplash.com/random/100x100/?5" alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
-                    <h2 className="mb-1 text-xl font-semibold">Query Title</h2>
+                    <img src={productimageURL} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                    <h2 className="mb-1 text-xl font-semibold">{querytitle}</h2>
                 </div>
 
                 {/* Queries Details */}
                 <div className="text-start">
-                    <p>Product Name : <span>Hadphone</span></p>
-                    <p>Brand Name : <span>xiomi</span></p>
-                    <p>Alternation Reason : <span>This dive is very bad</span></p>
-                    <p>Post Date : <span> 13/05/2020 </span></p>
-                    <p>recommendationCount : <span> 2 </span></p>
+                    <p>Product Name : <span>{productName}</span></p>
+                    <p>Brand Name : <span>{productBrand}</span></p>
+                    <p>Alternation Reason : <span>{boycotdescription}</span></p>
+                    <p>Post Date : <span> {datetime} </span></p>
+                    <p>recommendationCount : <span> {recommendationCount} </span></p>
                 </div>
 
                 <div className="flex space-x-4  justify-between ">
                     <div className="flex gap-4 items-center">
-                        <img alt="" src="https://source.unsplash.com/100x100/?portrait" className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
+                        <img alt="" src={userimageURL} className="object-cover w-12 h-12 rounded-full shadow dark:bg-gray-500" />
                         <div className="flex flex-col space-y-1">
-                            <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">Leroy Jenkins</a>
+                            <a rel="noopener noreferrer" href="#" className="text-sm font-semibold">{username}</a>
                         </div>
                     </div>
 
