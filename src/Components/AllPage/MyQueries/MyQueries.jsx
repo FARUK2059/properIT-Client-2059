@@ -1,26 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import AddQuerisBanner from "./AddQuerisBanner/AddQuerisBanner";
 import useAuth from "../../Hooks/useAuth";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
+import Swal from "sweetalert2";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 const MyQueries = () => {
 
     const { user } = useAuth();
-    const [quries, setQueries] = useState([]);
-    // console.log(user, quries);
+    const quries = useLoaderData();
+    // const [quries, setQueries] = useState([]);
+    const [userQueryDetailAll, setUserQueryData] = useState(quries);
+    console.log(userQueryDetailAll);
+    
 
-    const url = 'http://localhost:5000/queries';
+    // const url = 'http://localhost:5000/queries';
 
-    useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setQueries(data))
-    }, [url]);
+    // useEffect(() => {
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setQueries(data))
+    // }, [url]);
 
-    const userQueryData = quries.filter((item) => item?.email === user.email);
+    const userQueryData = userQueryDetailAll.filter((quries) => quries?.email === user.email);
     console.log(userQueryData);
+
 
 
     // const axiosSecure = useAxiosSecure();
@@ -34,7 +39,41 @@ const MyQueries = () => {
     // }, [url, axiosSecure]);
 
 
+    // Delete Function 
+    const handleDeleteQuery = _id => {
 
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+
+
+                    fetch(`http://localhost:5000/queries/${_id}`, {
+                        method: 'DELETE'
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            console.log(data);
+                            if (data.deletedCount > 0) {
+                                Swal.fire({
+                                    title: "Deleted!",
+                                    text: "Your Query Data has been deleted.",
+                                    icon: "success"
+                                });
+                                const remainig = userQueryDetailAll.filter(querys => querys._id !== _id);
+                                setUserQueryData(remainig);
+                            }
+                        })
+                }
+            });
+    }
 
     return (
         <div>
@@ -56,8 +95,8 @@ const MyQueries = () => {
 
                                 <div className="flex justify-between sm:gap-4 ">
                                     <div className="text-center">
-                                        <h3 className="text-lg font-bold text-gray-900 sm:text-xl"> Quries Title {query.length} </h3>
-                                        <p className="mt-1 text-xs font-medium text-gray-600 text-right">By John Doe</p>
+                                        <h3 className="text-lg font-bold text-gray-900 sm:text-xl"> {query.querytitle} </h3>
+                                        <p className="mt-1 text-xs font-medium text-gray-600 text-right">{query.username}</p>
                                     </div>
 
                                     <div className="">
@@ -71,31 +110,31 @@ const MyQueries = () => {
 
                                 {/* Queries Details */}
                                 <div className="text-start mt-4">
-                                    <p>Product Name : <span>Hadphone</span></p>
-                                    <p>Brand Name : <span>xiomi</span></p>
-                                    {/* <p>Alternation Reason : <span>This dive is very bad</span></p> */}
-                                    <p>Post Date : <span> 13/05/2020 </span></p>
-                                    <p>recommendationCount : <span> 2 </span></p>
+                                    <p>Product Name : <span>{query.productName}</span></p>
+                                    <p>Brand Name : <span>{query.productBrand}</span></p>
+                                    <p>Post Date : <span> {query.datetime} </span></p>
+                                    <p>recommendationCount : <span> {query.recommendationCount} </span></p>
                                 </div>
 
-                                <dl className="mt-6 flex gap-4 mb-6 justify-center">
+                                <div className="mt-6 flex gap-4 mb-6 justify-center ">
 
                                     {/*View Details Queries Button */}
                                     <div>
-                                        <Link to="/myquerydetails" className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Details </Link>
+                                        <Link to={`/myquerydetails/${query._id}`} className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Details </Link>
                                     </div>
 
                                     {/*Update Queries Button */}
                                     <div>
-                                        <Link to="/myupdate" className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Update </Link>
+                                        <Link to={`/myupdate/${query._id}`} className="inline-block rounded  px-8 py-3 text-sm font-medium text-black transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500 bg-yellow-300" > Update </Link>
                                     </div>
+
                                     {/* Delete Queries Button */}
-                                    <div>
-                                        <Link to="" className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Delete </Link>
+                                    <div onClick={() => handleDeleteQuery(query._id)}>
+                                        <Link  className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Delete </Link>
                                     </div>
 
 
-                                </dl>
+                                </div>
                             </div>
 
                         </div>)
