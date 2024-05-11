@@ -11,6 +11,7 @@ import AddMyQueries from "../Components/AllPage/MyQueries/AddMyQueries/AddMyQuer
 import Details from "../Components/AllPage/MyQueries/Details/Details";
 import Update from "../Components/AllPage/MyQueries/Update/Update";
 import Queries from "../Components/AllPage/QueriesPage/Queries";
+import Recommend from "../Components/AllPage/QueriesPage/RecommendPage/Recommend";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             {
                 path: "/queries",
                 element: <Queries></Queries>,
+                loader: () => fetch('http://localhost:5000/queries')
+            },
+            {
+                path: "/recommend/:id",
+                element: <PrivetRout><Recommend></Recommend></PrivetRout>,
                 loader: () => fetch('http://localhost:5000/queries')
             },
             {

@@ -95,8 +95,8 @@ const MyQueries = () => {
 
                                 <div className="flex justify-between sm:gap-4 ">
                                     <div className="text-center">
-                                        <h3 className="text-lg font-bold text-gray-900 sm:text-xl"> {query.querytitle} </h3>
-                                        <p className="mt-1 text-xs font-medium text-gray-600 text-right">{query.username}</p>
+                                        <h3 className="text-lg font-bold  sm:text-xl"> {query.querytitle} </h3>
+                                        <p className="mt-1 text-xs font-medium  text-right">{query.username}</p>
                                     </div>
 
                                     <div className="">

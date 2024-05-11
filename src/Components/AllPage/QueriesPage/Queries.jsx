@@ -34,7 +34,7 @@ const Queries = () => {
                                     <p>Posted Date : <span> {qury.datetime} </span></p>
                                     <p>recommendationCount : <span> {qury.recommendationCount} </span></p>
                                     <div className="grid justify-start mt-4">
-                                        <Link to="/myqueries"><button className="btn btn-error">Recommend</button></Link>
+                                        <Link to={`/recommend/${qury._id}`}><button className="btn btn-error">Recommend</button></Link>
                                     </div>
                                 </div>
 

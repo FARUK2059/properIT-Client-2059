@@ -14,7 +14,7 @@ const Details = () => {
     }, [updateTitle]);
 
 
-    // /***/ Art and Craft Ditails Data Loade
+    // /***/ Query Ditails Data Loade
     const allQueryDetails = useLoaderData();
     // console.log(allQueryDetails);
     const { id } = useParams(allQueryDetails);
@@ -33,7 +33,7 @@ const Details = () => {
 
                 {/* Querie IMG and Title */}
                 <div>
-                    <img src={productimageURL} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                    <img src={productimageURL} alt="" className="mb-4 h-72 w-72" />
                     <h2 className="mb-1 text-xl font-semibold">{querytitle}</h2>
                 </div>
 
