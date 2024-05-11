@@ -10,6 +10,7 @@ import PrivetRout from "../Components/Autentication/PrivateRoute/PrivetRout";
 import AddMyQueries from "../Components/AllPage/MyQueries/AddMyQueries/AddMyQueries";
 import Details from "../Components/AllPage/MyQueries/Details/Details";
 import Update from "../Components/AllPage/MyQueries/Update/Update";
+import Queries from "../Components/AllPage/QueriesPage/Queries";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <LogIn></LogIn>
+            },
+            {
+                path: "/queries",
+                element: <Queries></Queries>,
+                loader: () => fetch('http://localhost:5000/queries')
             },
             {
                 path: "/myqueries",

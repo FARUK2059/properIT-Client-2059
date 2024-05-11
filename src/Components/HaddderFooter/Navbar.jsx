@@ -47,7 +47,7 @@ const Navbar = () => {
     const links = <>
 
         <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/">Home</NavLink></li>
-        <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/addcraft">Queries</NavLink></li>
+        <li><NavLink className="hover:bg-gray-600 hover:text-slate-100" to="/queries">Queries</NavLink></li>
 
         {
             user && <>
