@@ -8,6 +8,8 @@ import LogIn from "../Components/RegisterLogin/LogIn";
 import MyQueries from "../Components/AllPage/MyQueries/MyQueries";
 import PrivetRout from "../Components/Autentication/PrivateRoute/PrivetRout";
 import AddMyQueries from "../Components/AllPage/MyQueries/AddMyQueries/AddMyQueries";
+import Details from "../Components/AllPage/MyQueries/Details/Details";
+import Update from "../Components/AllPage/MyQueries/Update/Update";
 
 const router = createBrowserRouter([
     {
@@ -34,6 +36,14 @@ const router = createBrowserRouter([
             {
                 path: "/addmyqueries",
                 element: <PrivetRout><AddMyQueries></AddMyQueries></PrivetRout>
+            },
+            {
+                path: "/myquerydetails",
+                element: <Details></Details>
+            },
+            {
+                path: "/myupdate",
+                element: <Update></Update>
             }
         ]
     },
