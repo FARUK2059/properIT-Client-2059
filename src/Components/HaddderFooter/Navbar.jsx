@@ -92,7 +92,7 @@ const Navbar = () => {
                                     <div className="tooltip tooltip-left " data-tip={user?.displayName || "not found"}>
                                         <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar mx-4">
                                             <div className="w-10 rounded-full border border-black">
-                                                <img alt="null " src={user?.photoURL} />
+                                                <img referrerPolicy="no-referrer" alt="null " src={user?.photoURL} />
                                             </div>
                                         </div>
 
