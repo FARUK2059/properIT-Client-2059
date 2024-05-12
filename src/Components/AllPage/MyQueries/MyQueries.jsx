@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
 import AddQuerisBanner from "./AddQuerisBanner/AddQuerisBanner";
 import useAuth from "../../Hooks/useAuth";
-import {  useState } from "react";
+import { useState } from "react";
 import Swal from "sweetalert2";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
@@ -10,10 +10,13 @@ const MyQueries = () => {
 
     const { user } = useAuth();
     const quries = useLoaderData();
+    const [sort, setSort] = useState('')
+
+
     // const [quries, setQueries] = useState([]);
     const [userQueryDetailAll, setUserQueryData] = useState(quries);
-    console.log(userQueryDetailAll);
-    
+    // console.log(userQueryDetailAll);
+
 
     // const url = 'http://localhost:5000/queries';
 
@@ -24,7 +27,7 @@ const MyQueries = () => {
     // }, [url]);
 
     const userQueryData = userQueryDetailAll.filter((quries) => quries?.email === user.email);
-    console.log(userQueryData);
+    // console.log(userQueryData);
 
 
 
@@ -85,6 +88,24 @@ const MyQueries = () => {
 
             {/* My Query section */}
             <div>
+
+                {/* Short section */}
+                <div>
+                    <div className="p-4 mt-4">
+                        <select onChange={e => {
+                            setSort(e.target.value)
+                            // setCurrentPage(1)
+                        }}
+                            value={sort}
+                            name='sort'
+                            id='sort' className='border p-4 rounded-md' >
+                            <option value=''>Sort By Default</option>
+                            <option value='dsc'>Descending Order</option>
+                            <option value='asc'>Ascending Order</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 p-2 gap-6 mt-10">
 
                     {
@@ -130,7 +151,7 @@ const MyQueries = () => {
 
                                     {/* Delete Queries Button */}
                                     <div onClick={() => handleDeleteQuery(query._id)}>
-                                        <Link  className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Delete </Link>
+                                        <Link className="inline-block rounded bg-indigo-600 px-8 py-3 text-sm font-medium text-white transition hover:scale-110 hover:shadow-xl focus:outline-none focus:ring active:bg-indigo-500" > Delete </Link>
                                     </div>
 
 

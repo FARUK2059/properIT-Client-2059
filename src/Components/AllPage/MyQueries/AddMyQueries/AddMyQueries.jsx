@@ -28,10 +28,10 @@ const AddMyQueries = () => {
         const email = form.email.value;
         const userimageURL = form.userimageURL.value;
         const datetime = form.datetime.value;
-        const recommendationCount = form.recommendationCount.value;
+        // const recommendationCount = form.recommendationCount.value;
 
 
-        const querie = { productName, productBrand, productimageURL, querytitle, boycotdescription, username, email, userimageURL, datetime, recommendationCount }
+        const querie = { productName, productBrand, productimageURL, querytitle, boycotdescription, username, email, userimageURL, datetime, recommendationCount: 0 }
         console.log(querie);
 
         // Send Data to the server
@@ -46,6 +46,7 @@ const AddMyQueries = () => {
             .then(data => {
                 console.log(data);
                 if (data.insertedId) {
+                    e.target.reset();
                     Swal.fire({
                         title: 'success',
                         text: 'Querie Added successfully',
@@ -134,10 +135,10 @@ const AddMyQueries = () => {
                                     </div>
 
                                     {/* recommendationCount */}
-                                    <div className="col-span-full hidden sm:col-span-3 hover:border rounded-md lg:p-6 p-2  hover:bg-orange-50">
+                                    {/* <div className="col-span-full hidden sm:col-span-3 hover:border rounded-md lg:p-6 p-2  hover:bg-orange-50">
                                         <label className="text-md grid text-start p-2">recommendationCount</label>
                                         <input type="text" name="recommendationCount" value={0} placeholder="Inpute your recomandation" className="w-full rounded-md focus:ring focus:ring-opacity-75  p-2 border" required />
-                                    </div>
+                                    </div> */}
 
                                     {/* Submit Button */}
                                     <div className="form-control col-span-full">
