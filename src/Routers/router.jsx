@@ -12,6 +12,9 @@ import Details from "../Components/AllPage/MyQueries/Details/Details";
 import Update from "../Components/AllPage/MyQueries/Update/Update";
 import Queries from "../Components/AllPage/QueriesPage/Queries";
 import Recommend from "../Components/AllPage/QueriesPage/RecommendPage/Recommend";
+import AllRecommendForID from "../Components/AllPage/QueriesPage/RecommendPage/AllRecommendForID";
+import MyRecommendation from "../Components/AllPage/MyRecommendation/MyRecommendation";
+import RecommendForMe from "../Components/AllPage/RecomandForMe/RecommendForMe";
 
 const router = createBrowserRouter([
     {
@@ -47,6 +50,11 @@ const router = createBrowserRouter([
                 loader: () => fetch('http://localhost:5000/queries')
             },
             {
+                path: "/allrecommendforid/:queryId",
+                element: <AllRecommendForID></AllRecommendForID>,
+                loader: ( { params } ) => fetch(`http://localhost:5000/recommends/${params.queryId}`)
+            },
+            {
                 path: "/addmyqueries",
                 element: <PrivetRout><AddMyQueries></AddMyQueries></PrivetRout>
             },
@@ -59,7 +67,14 @@ const router = createBrowserRouter([
                 path: "/myupdate/:id",
                 element: <Update></Update>,
                 loader: ( { params } ) => fetch(`http://localhost:5000/queries/${params.id}`)
-
+            },
+            {
+                path: "/recommendforme",
+                element: <RecommendForMe></RecommendForMe>
+            },
+            {
+                path: "/myrecomendation",
+                element: <MyRecommendation></MyRecommendation>
             }
         ]
     },

@@ -15,7 +15,7 @@ const Recommend = () => {
     const querys = allQueryDetails?.find((query) => query._id === id)
     // console.log(querys);
 
-    const { productName, productBrand, productimageURL, querytitle, boycotdescription, datetime, recommendationCount, userimageURL, username } = querys;
+    const { productName, productBrand, productimageURL, querytitle, boycotdescription, datetime, recommendationCount, userimageURL, username, _id } = querys;
 
     return (
         <div>
@@ -55,7 +55,7 @@ const Recommend = () => {
 
             {/* This Query All Recommend */}
             <div className="p-6">
-                <Link to=""><button className="btn btn-primary hover:btn-warning">See All Recommend</button></Link>
+                <Link to={`/allrecommendforid/${_id}`}><button className="btn btn-primary hover:btn-warning">See All Recommend</button></Link>
             </div>
 
             {/* Add Recomandation Section */}
