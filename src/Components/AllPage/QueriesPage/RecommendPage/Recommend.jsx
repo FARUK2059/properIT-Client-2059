@@ -1,11 +1,13 @@
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import AddRecommend from "./AddRecommend";
+import useAuth from "../../../Hooks/useAuth";
+import { useEffect } from "react";
 
 
 
 
 const Recommend = () => {
-
+    const { updateTitle } = useAuth();
     // /***/ Query Ditails Data Loade
     const allQueryDetails = useLoaderData();
     // console.log(allQueryDetails);
@@ -16,6 +18,12 @@ const Recommend = () => {
     // console.log(querys);
 
     const { productName, productBrand, productimageURL, querytitle, boycotdescription, datetime, recommendationCount, userimageURL, username, _id } = querys;
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' Recomend | ProperIT');
+    }, [updateTitle]);
+
 
     return (
         <div>

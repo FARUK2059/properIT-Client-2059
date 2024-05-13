@@ -1,11 +1,18 @@
 import { Link, useLoaderData } from "react-router-dom";
+import useAuth from "../../../Hooks/useAuth";
+import { useEffect } from "react";
 
 
 
 const AllRecommendForID = () => {
-
+    const { updateTitle } = useAuth();
     const allRecommendId = useLoaderData();
     console.log(allRecommendId);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' Recommend By ID | ProperIT');
+    }, [updateTitle]);
 
     return (
         <div>

@@ -17,7 +17,7 @@ const Update = () => {
 
     // Update Dynamic title Setup
     useEffect(() => {
-        updateTitle('My Craft Update | Craft Store');
+        updateTitle('My Query Update | ProperIT');
     }, [updateTitle]);
 
     const handleUpdateQuery = e => {

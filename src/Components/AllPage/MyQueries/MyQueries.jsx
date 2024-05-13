@@ -1,15 +1,20 @@
 import { Link, useLoaderData } from "react-router-dom";
 import AddQuerisBanner from "./AddQuerisBanner/AddQuerisBanner";
 import useAuth from "../../Hooks/useAuth";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 // import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 
 const MyQueries = () => {
 
-    const { user } = useAuth();
+    const { user, updateTitle } = useAuth();
     const quries = useLoaderData();
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' My Queries | ProperIT');
+    }, [updateTitle]);
 
 
     // const [quries, setQueries] = useState([]);

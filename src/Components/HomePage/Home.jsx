@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import useAuth from "../Hooks/useAuth";
 import FutureGalary from "./ExtraSection/FutureGalary";
 import OurService from "./ExtraSection/OurService";
 import RecentQueries from "./RecentQueries/RecentQueries";
@@ -5,9 +7,17 @@ import Slider from "./SliderBanner/Slider";
 
 
 const Home = () => {
+
+    const { updateTitle } = useAuth();
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' Home | ProperIT');
+    }, [updateTitle]);
+
     return (
         <div>
-            
+
             {/* Slider and banner section */}
             <div>
                 <Slider></Slider>

@@ -1,3 +1,5 @@
+// import { useEffect, useState } from "react";
+// import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -6,6 +8,18 @@ import { useLoaderData } from "react-router-dom";
 const RecentQueries = () => {
     const allQuery = useLoaderData();
     // console.log(allQuery);
+
+    
+    // const [allQuery, setQuery] = useState();
+    // const axiosSecure = useAxiosSecure();
+    // console.log(allQuery);
+
+    // const url = '/letest-queries';
+
+    // useEffect( () => {
+    //     axiosSecure.get(url)
+    //     .then(res => setQuery(res.data))
+    // }, [url, axiosSecure])
 
 
     return (

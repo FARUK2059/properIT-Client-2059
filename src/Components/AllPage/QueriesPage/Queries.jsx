@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 
 
 const Queries = () => {
-
+    const { updateTitle } = useAuth();
     const allQueries = useLoaderData();
     // console.log(allQueries);
     const [searchText, setSearchText] = useState('');
     const [search, setSearch] = useState('');
     console.log(search);
+
+
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' Queries | ProperIT');
+    }, [updateTitle]);
 
     // useEffect(() => {
     // fetch(`http://localhost:5000/all-query?productName=${searchText}`)

@@ -1,15 +1,21 @@
 import { useLoaderData } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import { useEffect } from "react";
 
 
 
 const RecommendForMe = () => {
 
-    const { user } = useAuth();
+    const { user, updateTitle } = useAuth();
     // console.log(user);
 
     const recommendMe = useLoaderData();
     // console.log(recommendMe);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' Recommend For Me | ProperIT');
+    }, [updateTitle]);
 
     const recommandMes = recommendMe?.filter((recomand) => recomand?.userEmail === user?.email);
     console.log(recommandMes);

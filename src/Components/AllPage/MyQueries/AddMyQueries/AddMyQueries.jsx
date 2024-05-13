@@ -12,7 +12,7 @@ const AddMyQueries = () => {
 
     // Update Dynamic title Setup
     useEffect(() => {
-        updateTitle('Add Queries | ProperIT');
+        updateTitle('Add My Query | ProperIT');
     }, [updateTitle]);
 
     const handleAddQueries = e => {

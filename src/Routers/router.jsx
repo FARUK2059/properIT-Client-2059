@@ -25,7 +25,7 @@ const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/letest-queries')
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/letest-queries`)
             },
             {
                 path: "/register",
@@ -38,22 +38,22 @@ const router = createBrowserRouter([
             {
                 path: "/queries",
                 element: <Queries></Queries>,
-                loader: () => fetch('http://localhost:5000/queries')
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/queries`)
             },
             {
                 path: "/recommend/:id",
                 element: <PrivetRout><Recommend></Recommend></PrivetRout>,
-                loader: () => fetch('http://localhost:5000/queries')
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/queries`)
             },
             {
                 path: "/myqueries",
                 element: <PrivetRout><MyQueries></MyQueries></PrivetRout>,
-                loader: () => fetch('http://localhost:5000/queries')
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/queries`)
             },
             {
                 path: "/allrecommendforid/:queryId",
                 element: <AllRecommendForID></AllRecommendForID>,
-                loader: ( { params } ) => fetch(`http://localhost:5000/recommends/${params.queryId}`)
+                loader: ( { params } ) => fetch(`${import.meta.env.VITE_API_URL}/recommends/${params.queryId}`)
             },
             {
                 path: "/addmyqueries",
@@ -62,22 +62,22 @@ const router = createBrowserRouter([
             {
                 path: "/myquerydetails/:id",
                 element: <Details></Details>,
-                loader: () => fetch('http://localhost:5000/queries')
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/queries`)
             },
             {
                 path: "/myupdate/:id",
                 element: <Update></Update>,
-                loader: ( { params } ) => fetch(`http://localhost:5000/queries/${params.id}`)
+                loader: ( { params } ) => fetch(`${import.meta.env.VITE_API_URL}/queries/${params.id}`)
             },
             {
                 path: "/recommendforme",
                 element: <PrivetRout><RecommendForMe></RecommendForMe></PrivetRout>,
-                loader: ( ) => fetch('http://localhost:5000/recommends')
+                loader: ( ) => fetch(`${import.meta.env.VITE_API_URL}/recommends`)
             },
             {
                 path: "/myrecomendation",
                 element: <PrivetRout><MyRecommendation></MyRecommendation></PrivetRout>,
-                loader: ( ) => fetch('http://localhost:5000/recommends')
+                loader: ( ) => fetch(`${import.meta.env.VITE_API_URL}/recommends`)
             }
         ]
     },

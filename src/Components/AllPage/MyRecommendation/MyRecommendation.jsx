@@ -2,20 +2,25 @@
 import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 
 
 const MyRecommendation = () => {
 
-    const { user } = useAuth();
+    const { user, updateTitle } = useAuth();
     const myRecommend = useLoaderData();
     // console.log(myRecommend);
     const userRecommand = myRecommend?.filter((recomand) => recomand?.recommenderEmail === user?.email);
     console.log(userRecommand);
 
     const [userRecommends, setUserRecommends] = useState(userRecommand);
+
+    // Update Dynamic title Setup
+    useEffect(() => {
+        updateTitle(' Recommend By ID | ProperIT');
+    }, [updateTitle]);
 
     // Delete Function 
     const handleDeleteRecommend = _id => {

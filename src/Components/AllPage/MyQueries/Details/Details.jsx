@@ -10,7 +10,7 @@ const Details = () => {
 
     // Update Dynamic title Setup
     useEffect(() => {
-        updateTitle('Details | Craft Store');
+        updateTitle('My Query Details  | ProperIT');
     }, [updateTitle]);
 
 
