@@ -5,7 +5,7 @@ import { useLoaderData } from "react-router-dom";
 
 const RecentQueries = () => {
     const allQuery = useLoaderData();
-    console.log(allQuery);
+    // console.log(allQuery);
 
 
     return (

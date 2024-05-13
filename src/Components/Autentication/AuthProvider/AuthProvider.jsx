@@ -5,6 +5,7 @@ import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStat
 
 import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 
 const auth = getAuth(app);
@@ -58,14 +59,33 @@ const AuthProvider = ({ children }) => {
     // UseState changed
     useEffect(() => {
         const unSubcribe = onAuthStateChanged(auth, currentUser => {
-            // console.log('user in th e state changed', currentUser)
+            const UserEmail = currentUser?.email || user?.email;
+            const loggedUser = { email: UserEmail };
+            console.log('user in th e state changed', currentUser)
             setUser(currentUser)
             setLoading(false)
+
+            //  if user existiong token
+            if (currentUser) {
+                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true } )
+                    .then(res => {
+                        console.log('token response', res.data);
+                    })
+            }
+            else {
+                axios.post('http://localhost:5000/logout', loggedUser, {
+                    withCredentials: true
+                })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+            }
+
         })
         return () => {
             unSubcribe();
         }
-    }, [])
+    }, [user?.email])
 
     // Setup Dynamic Title
     useEffect(() => {
