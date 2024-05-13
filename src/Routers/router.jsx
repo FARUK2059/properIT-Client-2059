@@ -70,7 +70,8 @@ const router = createBrowserRouter([
             },
             {
                 path: "/recommendforme",
-                element: <RecommendForMe></RecommendForMe>
+                element: <PrivetRout><RecommendForMe></RecommendForMe></PrivetRout>,
+                loader: ( ) => fetch('http://localhost:5000/recommends')
             },
             {
                 path: "/myrecomendation",

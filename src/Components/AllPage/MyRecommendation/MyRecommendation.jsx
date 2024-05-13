@@ -43,7 +43,7 @@ const MyRecommendation = () => {
                                     text: "Recommend has been deleted.",
                                     icon: "success"
                                 });
-                                const remainig = userRecommand.filter(querys => querys._id !== _id);
+                                const remainig = userRecommand.filter(reco => reco._id !== _id);
                                 setUserRecommends(remainig);
                             }
                         })
@@ -56,7 +56,7 @@ const MyRecommendation = () => {
         <div className="mt-10 mb-10">
 
             <div className="container p-2 mx-auto ">
-                <h2 className="mb-4 text-2xl font-semibold leading-tight">My Recommendation</h2>
+                <h2 className="mb-4 text-2xl font-semibold leading-tight">My Recommendation : {userRecommends.length}</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full text-xs">
                         <colgroup>
