@@ -10,7 +10,6 @@ const MyQueries = () => {
 
     const { user } = useAuth();
     const quries = useLoaderData();
-    const [sort, setSort] = useState('')
 
 
     // const [quries, setQueries] = useState([]);
@@ -88,23 +87,6 @@ const MyQueries = () => {
 
             {/* My Query section */}
             <div>
-
-                {/* Short section */}
-                <div>
-                    <div className="p-4 mt-4">
-                        <select onChange={e => {
-                            setSort(e.target.value)
-                            // setCurrentPage(1)
-                        }}
-                            value={sort}
-                            name='sort'
-                            id='sort' className='border p-4 rounded-md' >
-                            <option value=''>Sort By Default</option>
-                            <option value='dsc'>Descending Order</option>
-                            <option value='asc'>Ascending Order</option>
-                        </select>
-                    </div>
-                </div>
 
                 <div className="grid lg:grid-cols-3 md:grid-cols-2 p-2 gap-6 mt-10">
 
