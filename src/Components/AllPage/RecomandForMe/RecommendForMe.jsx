@@ -35,16 +35,16 @@ const RecommendForMe = () => {
                                 <col />
                                 <col />
                                 <col />
-                                <col className="w-24" />
+                                <col className="" />
                             </colgroup>
                             <thead className="">
                                 <tr className="text-left">
-                                    <th className="p-3">Product Image</th>
+                                    <th className="p-3">Recommend  Image</th>
                                     <th className="p-3">Recommend Title</th>
                                     <th className="p-3">Recommend Product Name</th>
-                                    <th className="p-3">Current Time-Stamp</th>
+                                    <th className="p-3">Recommend Date</th>
                                     <th className="p-3">Recommender Name</th>
-                                    <th className="p-3 items-center text-center">Recommender Image</th>
+                                    <th className="p-3 ">Query Peoduct Name</th>
                                 </tr>
                             </thead> 
 
@@ -73,13 +73,11 @@ const RecommendForMe = () => {
                                         <td className="p-3">
                                             <p className="dark:text-gray-600">{user.recommenderName}</p>
                                         </td>
-                                        <td className="p-3 items-center text-center">
-                                            <div className="avatar">
-                                                <div className="mask mask-squircle w-12 h-12">
-                                                    <img src={user.recommenderImageURL} alt="Avatar Tailwind CSS Component" />
-                                                </div>
-                                            </div>
+
+                                        <td className="p-3">
+                                            <p className="dark:text-gray-600">{user.productName}</p>
                                         </td>
+                                        
 
 
                                     </tr>
