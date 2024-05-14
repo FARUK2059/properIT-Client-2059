@@ -76,7 +76,7 @@ const AddRecommend = () => {
                     <div>
                         <div className="mt-4 p-4">
                             <h1 className="mb-5 text-4xl p-2  font-bold">Add Recomandation</h1>
-                            <p className="mb-5 text-xl font-semibold  ">wooden spoons, spatulas, and ladles for cooking and serving.</p>
+                            <p className="mb-5 text-xl font-semibold  ">Add a recommend for mobile, leptop, tv etc formet </p>
                         </div>
                     </div>
 
