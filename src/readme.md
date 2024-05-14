@@ -5,7 +5,8 @@
 ![PropIT LOgo](../public/information-technology.png)
 
 ## Live Site URL
-[Go to Round ProperIT]()
+[Go to Round ProperIT Link 1](https://proper-it-55963.firebaseapp.com)
+[Go to Round ProperIT Link 2](https://proper-it-55963.web.app)
 
 
 ## Features our Query
