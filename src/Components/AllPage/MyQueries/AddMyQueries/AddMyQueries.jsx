@@ -35,7 +35,7 @@ const AddMyQueries = () => {
         console.log(querie);
 
         // Send Data to the server
-        fetch('http://localhost:5000/queries', {
+        fetch(`${import.meta.env.VITE_API_URL}/queries`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

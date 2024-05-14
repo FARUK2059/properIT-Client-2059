@@ -20,7 +20,7 @@ const Queries = () => {
     }, [updateTitle]);
 
     // useEffect(() => {
-    // fetch(`http://localhost:5000/all-query?productName=${searchText}`)
+    // fetch(`${import.meta.env.VITE_API_URL}/all-query?productName=${searchText}`)
     //     .then(res => res.json())
     //     .then(data => setSerchData(data))
     // }, [ searchText])

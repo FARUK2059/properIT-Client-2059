@@ -36,7 +36,7 @@ const Update = () => {
         console.log(querie);
 
         // Update query function and send to bongoDB
-        fetch(`http://localhost:5000/queries/${_id}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/queries/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

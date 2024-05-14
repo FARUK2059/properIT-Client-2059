@@ -36,7 +36,7 @@ const MyRecommendation = () => {
         })
             .then((result) => {
                 if (result.isConfirmed) {
-                    fetch(`http://localhost:5000/recommends/${_id}`, {
+                    fetch(`${import.meta.env.VITE_API_URL}/recommends/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())

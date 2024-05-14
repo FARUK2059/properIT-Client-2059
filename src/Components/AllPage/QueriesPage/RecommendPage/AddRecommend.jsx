@@ -42,7 +42,7 @@ const AddRecommend = () => {
         console.log(addRecommend);
 
         // Send Data to the server
-        fetch('http://localhost:5000/recommends', {
+        fetch(`${import.meta.env.VITE_API_URL}/recommends`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

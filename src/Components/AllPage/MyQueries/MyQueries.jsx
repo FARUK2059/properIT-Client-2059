@@ -22,7 +22,7 @@ const MyQueries = () => {
     // console.log(userQueryDetailAll);
 
 
-    // const url = 'http://localhost:5000/queries';
+    // const url = `${import.meta.env.VITE_API_URL}/queries`;
 
     // useEffect(() => {
     //     fetch(url)
@@ -60,7 +60,7 @@ const MyQueries = () => {
                 if (result.isConfirmed) {
 
 
-                    fetch(`http://localhost:5000/queries/${_id}`, {
+                    fetch(`${import.meta.env.VITE_API_URL}/queries/${_id}`, {
                         method: 'DELETE'
                     })
                         .then(res => res.json())
