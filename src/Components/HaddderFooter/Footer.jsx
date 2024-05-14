@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import itLogo from "../../../public/information-technology.png";
 
 
 const Footer = () => {
@@ -8,9 +10,7 @@ const Footer = () => {
                     <div className="lg:flex">
                         <div className="w-full -mx-6 lg:w-2/5">
                             <div className="px-6">
-                                <a href="#">
-                                    <img className="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt="" />
-                                </a>
+                                <Link to="/" className="btn btn-ghost font-bold hover:text-yellow-600 hover:bg-pink-950 text-green-700 text-2xl"><span><img className="h-12 w-12" src={itLogo} alt="" /></span>ProperIT</Link>
 
                                 <p className="max-w-sm mt-2 text-gray-500 dark:text-gray-400">Join 31,000+ other and never miss out on new tips, tutorials, and more.</p>
 
@@ -82,9 +82,9 @@ const Footer = () => {
 
                     <hr className="h-px my-6 bg-gray-200 border-none dark:bg-gray-700" />
 
-                        <div>
-                            <p className="text-center text-gray-500 dark:text-gray-400">© Brand 2020 - All rights reserved</p>
-                        </div>
+                    <div>
+                        <p className="text-center text-gray-500 dark:text-gray-400">© Brand 2024 - All rights reserved</p>
+                    </div>
                 </div>
             </footer>
         </div>

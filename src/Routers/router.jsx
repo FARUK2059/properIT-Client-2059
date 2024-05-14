@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             {
                 path: "/myqueries",
                 element: <PrivetRout><MyQueries></MyQueries></PrivetRout>,
-                loader: () => fetch(`${import.meta.env.VITE_API_URL}/queries`)
+                loader: () => fetch(`${import.meta.env.VITE_API_URL}/my-queries`)
             },
             {
                 path: "/allrecommendforid/:queryId",
