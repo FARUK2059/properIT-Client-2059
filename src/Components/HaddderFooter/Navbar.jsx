@@ -67,7 +67,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className=" " >
+            <div className="" >
                 <div className="navbar items-center ">
                     <div className="navbar-start">
                         <div className="dropdown">

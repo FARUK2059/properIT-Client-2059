@@ -118,7 +118,7 @@ const LogIn = () => {
                             </form>
                             <p className='my-4 text-center'>New to Car Doctors <Link className='text-orange-600 font-bold' to="/register">Sign Up</Link> </p>
                             <div className="flex flex-col w-full">
-                                <div className="divider divider-warning text-white">OR</div>
+                                <div className="divider divider-warning ">OR</div>
                             </div>
                             <h2 className="text-white font-medium text-lg">SingIn With account</h2>
                             {
