@@ -24,7 +24,7 @@ const RecentQueries = () => {
 
     return (
         <div>
-            <p className="mt-8 text-5xl font-black"> Recent Add Queries</p>
+            <p className="mt-8 lg:text-5xl text-3xl font-black"> Recent Add Queries</p>
 
             <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 justify-center items-center">
 

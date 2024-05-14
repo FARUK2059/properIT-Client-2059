@@ -10,7 +10,7 @@ const FutureGalary = () => {
                     Real People
                 </div>
                 <h2 className="mb-4 text-4xl font-black ">
-                    Meet our talented team
+                    Cybersecurity Measures for Small Galary
                 </h2>
                 <h3 className="mx-auto text-xl font-medium leading-relaxed  lg:w-2/3">
                     They are working nonstop behind the scenes to help you build

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -14,7 +15,7 @@ const OurService = () => {
                             We Answer
                         </div>
                         <h2 className="text-4xl ">
-                            Frequently Asked Questions
+                            Frequently Post Query
                         </h2>
                     </div>
                     {/* END Heading */}
@@ -23,62 +24,50 @@ const OurService = () => {
                     <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
                         <div>
                             <h4 className="mb-2 font-semibold">
-                                What features are included?
+                                Implementing Agile Methodology in Software Development
                             </h4>
                             <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                                Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                                Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                                nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                                With its ability to analyze vast amounts of data and make predictions, AI has become an indispensable tool for businesses seeking to gain insights and improve decision-making. In healthcare
                             </p>
                         </div>
                         <div>
                             <h4 className="mb-2 font-semibold">
-                                Can I use PayPal to pay you?
+                                Cybersecurity Measures for Small Businesses
                             </h4>
                             <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                                Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                                Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                                nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                                AI-powered technologies are helping doctors diagnose diseases more accurately and develop personalized treatment plans for patients. In finance, AI algorithms are used to detect fraudulent transactions and predict market trends.
                             </p>
                         </div>
                         <div>
                             <h4 className="mb-2 font-semibold">
-                                Do I get access to the community?
+                                Blockchain Technology Applications in Supply Chain Managemen
                             </h4>
                             <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                                Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                                Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                                nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                                This query investigates the potential applications of blockchain technology in supply chain management processes. It explores how blockchain can enhance transparency, traceability, and efficiency in supply chain operations, addressing issues such as counterfeit goods, product recalls, and supply chain visibility.
                             </p>
                         </div>
                         <div>
                             <h4 className="mb-2 font-semibold">
-                                Can I get a refund just in case?
+                                Implementing DevOps Practices for Continuous Integration and Deployment
                             </h4>
                             <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                                Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                                Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                                nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                                This query explores the adoption of DevOps practices to streamline the software development lifecycle, with a focus on continuous integration and deployment (CI/CD). It discusses the principles of DevOps, automation tools, and best practices for achieving rapid and reliable delivery of software updates.
                             </p>
                         </div>
                         <div>
                             <h4 className="mb-2 font-semibold">
-                                Do you offer email support?
+                                Optimizing Website Performance for Mobile Devices
                             </h4>
                             <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                                Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                                Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                                nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                                This query focuses on optimizing website performance for mobile devices to enhance user experience and engagement. It discusses techniques such as responsive web design, image optimization, minification of code, and leveraging browser caching to improve website speed and usability on mobile platforms.
                             </p>
                         </div>
                         <div>
                             <h4 className="mb-2 font-semibold">
-                                Are the updates free for life?
+                                Cloud Migration Strategies for Enterprise Applications
                             </h4>
                             <p className="leading-relaxed text-gray-600 dark:text-gray-400">
-                                Etiam egestas fringilla enim, id convallis lectus laoreet at.
-                                Fusce purus nisi, gravida sed consectetur ut, interdum quis
-                                nisi. Quisque egestas nisl id lectus facilisis scelerisque.
+                                This query examines the strategies and considerations involved in migrating enterprise applications to the cloud. It covers topics such as assessing application readiness, selecting the right cloud platform, ensuring data security, and managing the migration process to achieve a seamless transition to the cloud environment.
                             </p>
                         </div>
                     </div>
@@ -108,7 +97,7 @@ const OurService = () => {
                                     clipRule="evenodd"
                                 />
                             </svg>
-                            <span>Go to support center</span>
+                            <Link to="/queries"><span>Go to Recommend</span></Link>
                         </a>
                     </div>
                     {/* END Link */}
