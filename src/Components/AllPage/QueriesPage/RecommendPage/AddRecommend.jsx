@@ -1,6 +1,6 @@
 import moment from "moment";
 import useAuth from "../../../Hooks/useAuth";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -15,6 +15,8 @@ const AddRecommend = () => {
     // console.log(querys);
 
     const { productName, querytitle, userimageURL, username, email, _id } = querys;
+
+    const navigat = useNavigate();
 
 
 
@@ -51,7 +53,7 @@ const AddRecommend = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     e.target.reset();
                     Swal.fire({
@@ -61,6 +63,7 @@ const AddRecommend = () => {
                         confirmButtonText: 'ok'
                         
                     })
+                    navigat('/myrecomendation')
                 }
             })
 

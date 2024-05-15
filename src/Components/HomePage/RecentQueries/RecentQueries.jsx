@@ -9,24 +9,12 @@ const RecentQueries = () => {
     const allQuery = useLoaderData();
     // console.log(allQuery);
 
-    
-    // const [allQuery, setQuery] = useState();
-    // const axiosSecure = useAxiosSecure();
-    // console.log(allQuery);
-
-    // const url = '/letest-queries';
-
-    // useEffect( () => {
-    //     axiosSecure.get(url)
-    //     .then(res => setQuery(res.data))
-    // }, [url, axiosSecure])
-
 
     return (
         <div>
-            <p className="mt-8 lg:text-5xl text-3xl font-black"> Recent Add Queries</p>
+            <p className="mt-8 p-2 lg:text-5xl text-3xl font-black"> Recent Add Queries</p>
 
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 justify-center items-center">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-6 justify-center items-center mt-4">
 
                 {
                     allQuery.map((rec) => <div key={rec._id}>

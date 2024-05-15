@@ -61,23 +61,23 @@ const AuthProvider = ({ children }) => {
         const unSubcribe = onAuthStateChanged(auth, currentUser => {
             const UserEmail = currentUser?.email || user?.email;
             const loggedUser = { email: UserEmail };
-            console.log('user in th e state changed', currentUser)
+            // console.log('user in th e state changed', currentUser)
             setUser(currentUser)
             setLoading(false)
 
             //  if user existiong token
             if (currentUser) {
                 axios.post(`${import.meta.env.VITE_API_URL}/jwt`, loggedUser, { withCredentials: true } )
-                    .then(res => {
-                        console.log('token response', res.data);
+                    .then( () => {
+                        // console.log('token response', res.data);
                     })
             }
             else {
                 axios.post(`${import.meta.env.VITE_API_URL}/logout`, loggedUser, {
                     withCredentials: true
                 })
-                    .then(res => {
-                        console.log(res.data);
+                    .then( () => {
+                        // console.log(res.data);
                     })
             }
 

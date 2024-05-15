@@ -54,15 +54,15 @@ const LogIn = () => {
     const handleGoogleSignIn = () => {
         // console.log("google  coming sooooooon");
         googleLogIn()
-            .then((result) => {
-                console.log(result.user);
+            .then(() => {
+                // console.log(result.user);
                 toast.success("Your LogIn successfully");
                 // navigat;
                 navigate(location?.state ? location.state : '/');
 
             })
-            .catch(error => {
-                console.log(error)
+            .catch( () => {
+                // console.log(error)
                 toast.error("Your login faild")
             })
     }

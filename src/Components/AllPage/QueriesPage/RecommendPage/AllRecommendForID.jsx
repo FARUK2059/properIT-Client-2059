@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const AllRecommendForID = () => {
     const { updateTitle } = useAuth();
     const allRecommendId = useLoaderData();
-    console.log(allRecommendId);
+    // console.log(allRecommendId);
 
     // Update Dynamic title Setup
     useEffect(() => {
@@ -64,6 +64,9 @@ const AllRecommendForID = () => {
                             <div className="hero-content text-center">
                                 <div className="max-w-md">
                                     <h1 className="text-5xl font-bold">The Recommend is Empty</h1>
+                                    <div className="p-6">
+                                        <Link to="/queries"><button className="btn btn-warning">Back to Query</button></Link>
+                                    </div>
                                 </div>
                             </div>
                         </div>

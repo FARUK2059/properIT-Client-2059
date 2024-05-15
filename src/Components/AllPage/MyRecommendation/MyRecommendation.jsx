@@ -3,17 +3,24 @@ import Swal from "sweetalert2";
 import useAuth from "../../Hooks/useAuth";
 import { useLoaderData } from "react-router-dom";
 import { useEffect, useState } from "react";
-
-
+// import { axiosSecure } from "../../Hooks/useAxiosSecure";
 
 
 const MyRecommendation = () => {
 
     const { user, updateTitle } = useAuth();
     const myRecommend = useLoaderData();
+
+
+    // const [myRecommend, setMyRecommend] = useState();
+    // useEffect( () => {
+    //     axiosSecure('/recommends')
+    //         .then(res => setMyRecommend(res.data))
+    // }, [] )
+
     // console.log(myRecommend);
     const userRecommand = myRecommend?.filter((recomand) => recomand?.recommenderEmail === user?.email);
-    console.log(userRecommand);
+    // console.log(userRecommand);
 
     const [userRecommends, setUserRecommends] = useState(userRecommand);
 

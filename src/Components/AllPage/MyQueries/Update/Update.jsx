@@ -1,7 +1,7 @@
 import moment from "moment";
 import { useEffect } from "react";
 import useAuth from "../../../Hooks/useAuth";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -11,7 +11,7 @@ const Update = () => {
     const { updateTitle } = useAuth();
 
     const updateQueryData = useLoaderData();
-    console.log(updateQueryData);
+    // console.log(updateQueryData);
 
     const { productName, productBrand, productimageURL, querytitle, boycotdescription,  _id } = updateQueryData;
 
@@ -19,6 +19,8 @@ const Update = () => {
     useEffect(() => {
         updateTitle('My Query Update | ProperIT');
     }, [updateTitle]);
+
+    const navigat = useNavigate();
 
     const handleUpdateQuery = e => {
         e.preventDefault();
@@ -33,7 +35,7 @@ const Update = () => {
 
 
         const querie = { productName, productBrand, productimageURL, querytitle, boycotdescription, datetime }
-        console.log(querie);
+        // console.log(querie);
 
         // Update query function and send to bongoDB
         fetch(`${import.meta.env.VITE_API_URL}/queries/${_id}`, {
@@ -53,6 +55,7 @@ const Update = () => {
                         icon: 'success',
                         confirmButtonText: 'ok'
                     })
+                    navigat('/myqueries')
                 }
             })
 }

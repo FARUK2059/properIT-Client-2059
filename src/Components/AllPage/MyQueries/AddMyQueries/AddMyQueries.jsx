@@ -2,18 +2,21 @@ import { useEffect } from "react";
 import useAuth from "../../../Hooks/useAuth";
 import moment from "moment";
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 
 const AddMyQueries = () => {
 
     const { user, updateTitle } = useAuth();
-    console.log(user);
+    // console.log(user);
 
     // Update Dynamic title Setup
     useEffect(() => {
         updateTitle('Add My Query | ProperIT');
     }, [updateTitle]);
+
+    const navigat = useNavigate();
 
     const handleAddQueries = e => {
         e.preventDefault();
@@ -32,7 +35,7 @@ const AddMyQueries = () => {
 
 
         const querie = { productName, productBrand, productimageURL, querytitle, boycotdescription, username, email, userimageURL, datetime, recommendationCount: 0 }
-        console.log(querie);
+        // console.log(querie);
 
         // Send Data to the server
         fetch(`${import.meta.env.VITE_API_URL}/queries`, {
@@ -53,6 +56,8 @@ const AddMyQueries = () => {
                         icon: 'success',
                         confirmButtonText: 'ok'
                     })
+                    navigat('/myqueries')
+                    
                 }
             })
 
