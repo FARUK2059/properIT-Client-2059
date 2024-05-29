@@ -4,6 +4,7 @@ import FutureGalary from "./ExtraSection/FutureGalary";
 import OurService from "./ExtraSection/OurService";
 import RecentQueries from "./RecentQueries/RecentQueries";
 import Slider from "./SliderBanner/Slider";
+import LiveTime from "./LiveTime/LiveTime";
 
 
 const Home = () => {
@@ -26,6 +27,11 @@ const Home = () => {
             {/* Resent Queries section */}
             <div>
                 <RecentQueries></RecentQueries>
+            </div>
+
+            {/* Live time functionality */}
+            <div>
+                <LiveTime></LiveTime>
             </div>
 
             {/* 1st extra section (Web Servic) */}
